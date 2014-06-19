@@ -1,9 +1,15 @@
-$container   = $('.work-list')
+$('.project-item').click ->
+  $('body').addClass 'modal-on'
+
+$('.modal-close').click ->
+  $('body').removeClass 'modal-on'
+
+$container   = $('.project-list')
 
 $container.isotope(
-    itemSelector: '.work-item'
+    itemSelector: '.project-item'
     masonry:
-      columnWidth: '.work-list li'
+      columnWidth: '.project-list li'
       gutter:      24
   )
 

@@ -16,10 +16,15 @@ body
   color                  $black
   margin                 0
   padding                0
-  position               relative
 
+  &.modal-on
+    overflow hidden
 
 h1
   font-size  2rem
   text-align center
   padding 20px 0
+
+.wrap
+  zIndex('middle')
+  position relative

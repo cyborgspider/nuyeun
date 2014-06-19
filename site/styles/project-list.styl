@@ -1,4 +1,4 @@
-.work-list
+.project-list
   clearfix()
 
   padding 0 0.75rem
@@ -13,10 +13,16 @@
     @media $tablet-vertical
       width        240px
 
-.work-item
+.project-item
+  background    #eee
   border        solid 1px $black
   float         left
   height        200px
-  width         100%
   margin-bottom 24px
-  background    #eee
+  width         100%
+
+  &.label
+    background #333
+    font-size  28px
+    color      #fff
+    text-align center

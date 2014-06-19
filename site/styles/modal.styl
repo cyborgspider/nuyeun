@@ -1,0 +1,46 @@
+.modal
+  background     rgba(0, 0, 0, 0.7)
+  bottom         0
+  left           0
+  opacity        0
+  overflow       auto
+  overflow-y     scroll
+  position       fixed
+  right          0
+  top            0
+  pointer-events none
+  zIndex('topmost')
+
+  .modal-on &
+    opacity        1
+    pointer-events auto
+
+.modal-box
+
+  background    #fff
+  border-radius 8px
+  left          50%
+  margin-left   -300px
+  min-height    400px
+  opacity       0
+  padding       20px
+  position      absolute
+  top           24px
+  width         600px
+  overflow-y    auto
+  box-shadow    0 5px 15px rgba(0, 0, 0, .7)
+
+  .modal-on &
+    opacity   1
+
+
+.modal-close
+  position  absolute
+  top       12px
+  right     24px
+  cursor    pointer
+  color     $black
+  font-size 24px
+
+  &:hover
+    color red
