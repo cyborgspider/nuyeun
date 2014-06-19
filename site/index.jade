@@ -16,9 +16,9 @@ html
         li
           .project-item.label 2014
         li
-          .project-item.c One
+          .project-item.c(data-href='futbol') One
         li
-          .project-item.e Two
+          .project-item.e(data-href='cfes-esp') Two
         li
           .project-item.g Three
         li
@@ -53,8 +53,14 @@ html
     .modal.animate-opacity
       .modal-box.animate-opacity
         .modal-close &times;
+        .modal-content
+
+    .project-content.hide
+      #futbol
         include projects/futbol
+      #cfes-esp
+        include projects/cfes-esp
 
     script(src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
-    script(src="js/scripts.js")
+    script(src="js/scripts.min.js")
 

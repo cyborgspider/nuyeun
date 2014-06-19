@@ -1,4 +1,6 @@
 .modal
+  zIndex('topmost')
+
   background     rgba(0, 0, 0, 0.7)
   bottom         0
   left           0
@@ -9,7 +11,6 @@
   right          0
   top            0
   pointer-events none
-  zIndex('topmost')
 
   .modal-on &
     opacity        1
@@ -19,19 +20,27 @@
 
   background    #fff
   border-radius 8px
-  left          50%
-  margin-left   -300px
+  box-shadow    0 5px 15px rgba(0, 0, 0, .7)
+  left          0
+  margin-bottom 48px
   min-height    400px
   opacity       0
   padding       20px
   position      absolute
-  top           24px
-  width         600px
-  overflow-y    auto
-  box-shadow    0 5px 15px rgba(0, 0, 0, .7)
+  top           0
+  width         100%
+
+  @media $tablet-vertical
+    left        50%
+    margin-left -300px
+    top         48px
+    width       600px
 
   .modal-on &
     opacity   1
+
+.modal-content
+  overflow-x hidden
 
 
 .modal-close

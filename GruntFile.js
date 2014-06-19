@@ -65,10 +65,16 @@ module.exports =function(grunt){
           options: {pretty:true},
           files:[{
             expand: true,
-            cwd:    'site/',
+            cwd:    "site/",
             src:    "*.jade",
             ext:    ".html",
             dest:   "build/"
+          },{
+            expand:true,
+            cwd: "site/projects",
+            src: "*.jade",
+            ext: ".txt",
+            dest: "build/projects/"
           }]
         }
       }
@@ -86,6 +92,6 @@ module.exports =function(grunt){
 
      //Run the task
      //Copy is registered but not executed. Refer to commented code in the initConfig method for details on how to add it.
-     grunt.registerTask('default', ['watch','coffee', 'concat', 'stylus', 'jade', 'copy' ]);
-     grunt.registerTask('build', ['coffee', 'concat', 'stylus','jade', 'copy' ]);
+     grunt.registerTask('default', ['watch','coffee', 'concat', 'stylus', 'jade', 'copy','uglify' ]);
+     grunt.registerTask('build', ['coffee', 'concat', 'stylus','jade', 'copy','uglify' ]);
 };
