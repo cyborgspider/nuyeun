@@ -1,0 +1,22 @@
+.work-list
+  clearfix()
+
+  padding 0 0.75rem
+
+  & > li
+    width         90%
+    position      relative
+
+    @media $phone-vertical
+      width 44%
+
+    @media $tablet-vertical
+      width        240px
+
+.work-item
+  border        solid 1px $black
+  float         left
+  height        200px
+  width         100%
+  margin-bottom 24px
+  background    #eee
