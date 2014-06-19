@@ -19,10 +19,8 @@
 .modal-box
 
   background    #fff
-  border-radius 8px
   box-shadow    0 5px 15px rgba(0, 0, 0, .7)
   left          0
-  margin-bottom 48px
   min-height    400px
   opacity       0
   padding       20px
@@ -30,11 +28,14 @@
   top           0
   width         100%
 
-  @media $tablet-vertical
+  @media $phone-vertical
     left        50%
     margin-left -300px
     top         48px
     width       600px
+    border-radius 8px
+    margin-bottom 48px
+
 
   .modal-on &
     opacity   1
