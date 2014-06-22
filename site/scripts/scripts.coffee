@@ -1,25 +1,28 @@
 ####MODAL FUNCTIONALITY####
 initModal =  (content) ->
+  modalMarkup    = '<div class="modal animate-opacity"><div class="modal-box animate-opacity"><div class="modal-close">&times;</div><div class="modal-content"></div></div></div>'
+  $('body').append(modalMarkup)
+  modalWrapper   = $('.modal')
   modalContainer = $('.modal-content')
 
-  loadModalContent = ->
-    modalContent = $('.project-content').find('#'+content).html()
+  loadModalContent = -> 
+    modalContent   = $('.project-content').find('#'+content).html()
     modalContainer.html(modalContent)
     $('body').addClass 'modal-on'
 
   killModal = ->
     $('body').removeClass 'modal-on'
-    modalContainer.html ''
+    modalWrapper.remove()
 
-  $('.modal-close, .modal').click ->
+  $('.modal-close, .modal').on('click', ->
     killModal()
+  )
 
   loadModalContent()
 
 
 $('.project-item').on('click', '.project-link', (e) ->
     e.preventDefault()
-    console.log 'huh?'
     content = $(@).attr 'href'
     initModal(content)  
   )

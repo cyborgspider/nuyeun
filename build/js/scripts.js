@@ -11,7 +11,10 @@
   var $container, initModal;
 
   initModal = function(content) {
-    var killModal, loadModalContent, modalContainer;
+    var killModal, loadModalContent, modalContainer, modalMarkup, modalWrapper;
+    modalMarkup = '<div class="modal animate-opacity"><div class="modal-box animate-opacity"><div class="modal-close">&times;</div><div class="modal-content"></div></div></div>';
+    $('body').append(modalMarkup);
+    modalWrapper = $('.modal');
     modalContainer = $('.modal-content');
     loadModalContent = function() {
       var modalContent;
@@ -21,9 +24,9 @@
     };
     killModal = function() {
       $('body').removeClass('modal-on');
-      return modalContainer.html('');
+      return modalWrapper.remove();
     };
-    $('.modal-close, .modal').click(function() {
+    $('.modal-close, .modal').on('click', function() {
       return killModal();
     });
     return loadModalContent();
@@ -32,7 +35,6 @@
   $('.project-item').on('click', '.project-link', function(e) {
     var content;
     e.preventDefault();
-    console.log('huh?');
     content = $(this).attr('href');
     return initModal(content);
   });
