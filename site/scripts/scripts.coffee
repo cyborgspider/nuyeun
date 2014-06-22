@@ -6,8 +6,9 @@ initModal =  (content) ->
   modalContainer = $('.modal-content')
 
   loadModalContent = -> 
-    modalContent   = $('.project-content').find('#'+content).html()
-    modalContainer.html(modalContent)
+    modalTitle  = contentAssembler.title
+    console.log modalTitle    
+    modalContainer.find('h1').text(modalTitle)
     $('body').addClass 'modal-on'
 
   killModal = ->
@@ -23,9 +24,19 @@ initModal =  (content) ->
 
 $('.project-item').on('click', '.project-link', (e) ->
     e.preventDefault()
-    content = $(@).attr 'href'
+    content           = $(@).attr 'href'
+    projectTitle      = $(@).siblings('.project-title').text()
+    projectImageCount = $(@).attr('data-images')
+
+    contentAssembler(projectTitle, projectImageCount)
     initModal(content)  
   )
+
+####CONTENT ASSEMBLY########
+contentAssembler = (projectTitle, projectImageCount) ->
+  projectTitle.title = (projectTitle) ->
+    projectTitle
+  console.log projectTitle + ' has ' + projectImageCount + ' images.'
 
 #####ISOTOPE SCRIPTS######
 ##########################
