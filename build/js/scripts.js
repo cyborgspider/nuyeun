@@ -29,14 +29,12 @@
     return loadModalContent();
   };
 
-  $('.project-item').on('click', function(e) {
+  $('.project-item').on('click', '.project-link', function(e) {
     var content;
-    if ($(this).attr('data-href')) {
-      content = $(this).attr('data-href');
-      return initModal(content);
-    } else {
-      return e.preventDefault();
-    }
+    e.preventDefault();
+    console.log('huh?');
+    content = $(this).attr('href');
+    return initModal(content);
   });
 
   $container = $('.project-list');

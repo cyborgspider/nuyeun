@@ -17,12 +17,11 @@ initModal =  (content) ->
   loadModalContent()
 
 
-$('.project-item').on('click', (e) ->
-    if $(@).attr('data-href')
-      content = $(@).attr 'data-href'
-      initModal(content)  
-    else
-      e.preventDefault()
+$('.project-item').on('click', '.project-link', (e) ->
+    e.preventDefault()
+    console.log 'huh?'
+    content = $(@).attr 'href'
+    initModal(content)  
   )
 
 #####ISOTOPE SCRIPTS######

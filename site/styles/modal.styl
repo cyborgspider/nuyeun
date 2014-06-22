@@ -43,14 +43,16 @@
 .modal-content
   overflow-x hidden
 
+  & > h1
+    margin-bottom 1.25rem
 
 .modal-close
-  position  absolute
-  top       12px
-  right     24px
-  cursor    pointer
   color     $black
-  font-size 24px
+  cursor    pointer
+  font-size 48px
+  position  absolute
+  right     12px
+  top       10px
 
   &:hover
-    color red
+    color $red-med

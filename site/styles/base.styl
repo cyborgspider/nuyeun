@@ -11,7 +11,8 @@ body
 
 body
   -webkit-font-smoothing antialiased
-  font normal 0.875rem/1 'Helvetica', 'Arial', sans-serif
+  font                   normal 0.875rem/1 'Raleway', 'Helvetica', 'Arial', sans-serif
+  font-weight            500
   background             #fff
   color                  $black
   margin                 0
@@ -21,13 +22,26 @@ body
     overflow hidden
 
 h1
-  font-size  2rem
-  text-align center
-  padding 20px 0
+  font-family 'Bitter', 'Georgia', serif
+  font-size   2rem
+  font-weight 400
+
+a
+  text-decoration none
+  transition transform 0.2s ease-in
+
+  &:active
+  &:focus
+    transform scale(.9,.9)
 
 .wrap
   zIndex('middle')
-  position       relative
+
+  margin-top 6rem
+  position   relative
+
+  @media $tablet-vertical
+    margin-top 3.75rem
 
 .hide
   display none

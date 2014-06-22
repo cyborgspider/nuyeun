@@ -19,10 +19,58 @@
   float         left
   height        200px
   margin-bottom 24px
+  overflow      hidden
+  position      relative
   width         100%
+
+  & > img
+    position absolute
+    top      0
+    left     0  
 
   &.label
     background #333
     font-size  28px
     color      #fff
     text-align center
+
+.project-info
+  background rgba(0,0,0,0.7)
+  bottom     0
+  left       0
+  opacity    0
+  padding    20px
+  position   absolute
+  right      0
+  text-align center
+  top        0
+
+  .project-item:hover &
+    opacity 1
+
+.project-title
+  color       #fff
+  font-size   1.5rem
+  line-height 1.2
+
+.project-link
+  zIndex('middle')
+
+  background     linear-gradient($red-light, $red-med)
+  border         1px solid $red-dark
+  border-radius  4px
+  bottom         20px
+  color          #fff
+  text-shadow    0 1px 0 #666
+  display        block
+  font-weight    bold
+  left           50%
+  margin-left    -60px
+  padding        0.5rem
+  position       absolute
+  text-transform uppercase
+  width          120px
+  transition     transform 0.2s ease-out
+
+  &:hover
+    background #fa2c40
