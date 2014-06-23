@@ -28,17 +28,17 @@ html
 
             .project-info.animate-opacity
               h2.project-title Futbol Mania Official Website
-              a.project-link(href="futbol-official") View Details
+              a.project-link(href="futbol-official", data-images="4") View Details
         li
           .project-item.g
             .project-info.animate-opacity
               h2.project-title Futbol Mania Teaser Website
-              a.project-link(href="futbol-teaser") View Details
+              a.project-link(href="futbol-teaser", data-images="3") View Details
         li
           .project-item.g
             .project-info.animate-opacity
               h2.project-title Crossfire Espa&ntilde;ol Website
-              a.project-link(href="cf-es") View Details                    
+              a.project-link(href="cf-es", data-images="10") View Details                    
         li
           .project-item.g
             .project-info.animate-opacity
@@ -192,13 +192,11 @@ html
               h2.project-title Hana Financial
               a.project-link(href="hana") View Details                                                         
 
-    .project-content.hide
-      #futbol-official
-        include projects/futbol-official
-      #futbol-teaser
-        include projects/futbol-teaser        
-      #cfes-esp
-        include projects/cfes-esp
+    //- .modal.animate-opacity
+    //-   .modal-box.animate-opacity
+    //-     .modal-close &times;
+    //-     .modal-content
+
 
     script(src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
     script(src="js/scripts.js")
