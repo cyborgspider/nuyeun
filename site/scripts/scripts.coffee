@@ -1,14 +1,17 @@
+modalMarkup    = '<div class="modal animate-opacity"><div class="modal-box animate-opacity"><div class="modal-close">&times;</div><div class="modal-content"><h1></h1><div class="project-images"></div></div></div></div>'
+
 ####MODAL FUNCTIONALITY####
-initModal =  (content) ->
-  modalMarkup    = '<div class="modal animate-opacity"><div class="modal-box animate-opacity"><div class="modal-close">&times;</div><div class="modal-content"></div></div></div>'
-  $('body').append(modalMarkup)
+initModal =  (projectID, projectTitle, projectImageCount) ->
+  $('body').prepend(modalMarkup)
   modalWrapper   = $('.modal')
   modalContainer = $('.modal-content')
+  modalImages = []
+  for i in [1..projectImageCount]
+    modalImages.push '<img src="img/'+projectID+'-'+i+'.jpg" alt="" />'
 
   loadModalContent = -> 
-    modalTitle  = contentAssembler.title
-    console.log modalTitle    
-    modalContainer.find('h1').text(modalTitle)
+    modalContainer.find('h1').text(projectTitle)
+    modalContainer.find('.project-images').html(modalImages)
     $('body').addClass 'modal-on'
 
   killModal = ->
@@ -24,19 +27,14 @@ initModal =  (content) ->
 
 $('.project-item').on('click', '.project-link', (e) ->
     e.preventDefault()
-    content           = $(@).attr 'href'
+
+    projectID         = $(@).attr 'href'
     projectTitle      = $(@).siblings('.project-title').text()
     projectImageCount = $(@).attr('data-images')
 
-    contentAssembler(projectTitle, projectImageCount)
-    initModal(content)  
+    initModal(projectID, projectTitle, projectImageCount)  
   )
 
-####CONTENT ASSEMBLY########
-contentAssembler = (projectTitle, projectImageCount) ->
-  projectTitle.title = (projectTitle) ->
-    projectTitle
-  console.log projectTitle + ' has ' + projectImageCount + ' images.'
 
 #####ISOTOPE SCRIPTS######
 ##########################
@@ -68,4 +66,3 @@ $('.filter-nav').on('click', 'li', ->
     )
 
   )
-
