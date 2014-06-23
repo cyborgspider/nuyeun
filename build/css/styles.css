@@ -32,6 +32,8 @@ nav{z-index:3;background:-webkit-linear-gradient(#363636 90%, #000 100%);backgro
 .filter-nav > li.active{color:#d1051e}
 .filter-nav > li:hover{text-decoration:underline}
 @media (min-width:48em){.filter-nav{display:block}
+}.intro{font-family:'Bitter';font-weight:400;font-size:1.4rem;line-height:1.4;padding:0 10% 1rem;}
+@media (min-width:48em){.intro{font-size:2.4rem;padding:3rem 10% 1.5rem}
 }.project-list{zoom:1;padding:0 .75rem;}
 .project-list:before,.project-list:after{content:"";display:table}
 .project-list:after{clear:both}
