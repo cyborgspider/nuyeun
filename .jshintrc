@@ -1,0 +1,9 @@
+{
+  "browser": true,
+  "esnext": true,
+  "globals": {'derp'},
+  "globalstrict": false,
+  "quotmark": true,
+  "undef": true,
+  "unused": true
+}

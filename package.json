@@ -3,14 +3,17 @@
   "author": "carlos-ortega",
   "version": "0.0.0",
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-coffee": "~0.7.0",
-    "grunt-contrib-concat": "^0.4.0",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-jade": "~0.8.0",
-    "grunt-contrib-stylus": "~0.8.0",
-    "grunt-contrib-uglify": "~0.2.4",
-    "grunt-contrib-watch": "~0.5.3",
-    "matchdep": "*"
+    "browser-sync": "^2.3.1",
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-jade": "^1.0.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-load-plugins": "^0.9.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sourcemaps": "^1.5.1",
+    "gulp-stylus": "^2.0.1",
+    "gulp-util": "^3.0.4",
+    "nib": "^1.1.0"
   }
 }
